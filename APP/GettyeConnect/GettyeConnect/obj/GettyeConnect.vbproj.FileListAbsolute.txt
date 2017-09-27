@@ -1,0 +1,16 @@
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.exe
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.xml
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.pdb
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnect.exe
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnect.pdb
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnect.xml
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnectDLL.dll
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\bin\Debug\Interop.ADODB.dll
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\bin\Debug\Interop.RDO.dll
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\obj\Debug\Interop.ADODB.dll
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\obj\Debug\Interop.RDO.dll
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.vbproj.ResolveComReference.cache
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.Form1.resources
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.Resources.resources
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.vbproj.GenerateResource.Cache

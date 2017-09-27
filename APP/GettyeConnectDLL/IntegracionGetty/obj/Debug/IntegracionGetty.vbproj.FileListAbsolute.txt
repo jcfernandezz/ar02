@@ -1,0 +1,45 @@
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.exe
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.xml
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.pdb
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\bin\Debug\IntegracionGetty.exe
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\bin\Debug\IntegracionGetty.pdb
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\bin\Debug\IntegracionGetty.xml
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\bin\Debug\GettyeConnectDLL.dll
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\bin\Debug\GettyeConnectDLL.pdb
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\bin\Debug\GettyeConnectDLL.xml
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.vbprojResolveAssemblyReference.cache
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.Form1.resources
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.Resources.resources
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.vbproj.GenerateResource.Cache
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\bin\Debug\IntegracionGetty.exe.config
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\IntegracionGetty\bin\Debug\Microsoft.Dynamics.GP.eConnect.dll
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\bin\Debug\IntegracionGetty.exe.config
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.exe
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.xml
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.pdb
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\bin\Debug\IntegracionGetty.exe
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\bin\Debug\IntegracionGetty.pdb
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\bin\Debug\IntegracionGetty.xml
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\bin\Debug\GettyeConnectDLL.dll
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\bin\Debug\Microsoft.Dynamics.GP.eConnect.dll
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\bin\Debug\GettyeConnectDLL.pdb
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\bin\Debug\GettyeConnectDLL.xml
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.vbprojResolveAssemblyReference.cache
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.Form1.resources
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.Resources.resources
+C:\GETTY\GettyIntegracionMS\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.vbproj.GenerateResource.Cache
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\bin\Debug\IntegracionGetty.exe.config
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.exe
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.xml
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.pdb
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\bin\Debug\IntegracionGetty.exe
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\bin\Debug\IntegracionGetty.pdb
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\bin\Debug\IntegracionGetty.xml
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\bin\Debug\GettyeConnectDLL.dll
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\bin\Debug\Microsoft.Dynamics.GP.eConnect.dll
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\bin\Debug\GettyeConnectDLL.pdb
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\bin\Debug\GettyeConnectDLL.xml
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.vbprojResolveAssemblyReference.cache
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.Form1.resources
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.Resources.resources
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\IntegracionGetty\obj\Debug\IntegracionGetty.vbproj.GenerateResource.Cache

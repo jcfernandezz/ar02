@@ -1,0 +1,14 @@
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\Interop.ADODB.dll
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.vbproj.ResolveComReference.cache
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.Form1.resources
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.Resources.resources
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.vbproj.GenerateResource.Cache
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\GettyeConnectAuto.exe
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\GettyeConnectAuto.pdb
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\GettyeConnectAuto.xml
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\Interop.ADODB.dll
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.exe
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.xml
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.pdb
+C:\Documents and Settings\aaparicio\Mis documentos\Visual Studio 2005\Projects\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\GettyeConnectDLL.dll
