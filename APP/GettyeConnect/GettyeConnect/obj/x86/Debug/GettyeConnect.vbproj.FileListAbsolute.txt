@@ -1,0 +1,7 @@
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\bin\x86\Debug\GettyeConnect.exe.config
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\x86\Debug\Interop.ADODB.dll
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\x86\Debug\Interop.RDO.dll
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\x86\Debug\GettyeConnect.vbproj.ResolveComReference.cache
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\x86\Debug\GettyeConnect.Form1.resources
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\x86\Debug\GettyeConnect.Resources.resources
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\x86\Debug\GettyeConnect.vbproj.GenerateResource.Cache

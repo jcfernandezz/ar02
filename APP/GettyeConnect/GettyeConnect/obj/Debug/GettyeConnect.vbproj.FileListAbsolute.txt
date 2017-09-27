@@ -1,0 +1,41 @@
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\Debug\Interop.ADODB.dll
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\Debug\Interop.RDO.dll
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.vbproj.ResolveComReference.cache
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.exe
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.xml
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.pdb
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnect.exe
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnect.pdb
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnect.xml
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\bin\Debug\Interop.ADODB.dll
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\bin\Debug\Interop.RDO.dll
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.vbprojResolveAssemblyReference.cache
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.Form1.resources
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.Resources.resources
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.vbproj.GenerateResource.Cache
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnect.exe.config
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnect\GettyeConnect\bin\Debug\Microsoft.Dynamics.GP.eConnect.dll
+C:\GETTY\GettyIntegracionMS\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnect.exe.config
+C:\GETTY\GettyIntegracionMS\GettyeConnect\GettyeConnect\obj\Debug\Interop.ADODB.dll
+C:\GETTY\GettyIntegracionMS\GettyeConnect\GettyeConnect\obj\Debug\Interop.RDO.dll
+C:\GETTY\GettyIntegracionMS\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.vbproj.ResolveComReference.cache
+C:\GETTY\GettyIntegracionMS\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.exe
+C:\GETTY\GettyIntegracionMS\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.xml
+C:\GETTY\GettyIntegracionMS\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.pdb
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnect.exe.config
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\obj\Debug\Interop.ADODB.dll
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\obj\Debug\Interop.RDO.dll
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.vbproj.ResolveComReference.cache
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.exe
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.xml
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.pdb
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnect.exe
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnect.pdb
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnect.xml
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\bin\Debug\Microsoft.Dynamics.GP.eConnect.dll
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\bin\Debug\Interop.ADODB.dll
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\bin\Debug\Interop.RDO.dll
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.vbprojResolveAssemblyReference.cache
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.Form1.resources
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.Resources.resources
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.vbproj.GenerateResource.Cache

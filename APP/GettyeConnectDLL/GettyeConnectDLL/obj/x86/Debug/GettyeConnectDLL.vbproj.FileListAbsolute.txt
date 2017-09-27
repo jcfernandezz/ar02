@@ -1,0 +1,11 @@
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\GettyeConnectDLL\obj\x86\Debug\Interop.ADODB.dll
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\GettyeConnectDLL\obj\x86\Debug\GettyeConnectDLL.vbproj.ResolveComReference.cache
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\GettyeConnectDLL\obj\x86\Debug\GettyeConnectDLL.Resources.resources
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\GettyeConnectDLL\obj\x86\Debug\GettyeConnectDLL.vbproj.GenerateResource.Cache
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\GettyeConnectDLL\bin\x86\Debug\GettyeConnectDLL.dll
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\GettyeConnectDLL\bin\x86\Debug\GettyeConnectDLL.pdb
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\GettyeConnectDLL\bin\x86\Debug\GettyeConnectDLL.xml
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\GettyeConnectDLL\bin\x86\Debug\GettyeConnectDLL.tlb
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\GettyeConnectDLL\obj\x86\Debug\GettyeConnectDLL.dll
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\GettyeConnectDLL\obj\x86\Debug\GettyeConnectDLL.xml
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectDLL\GettyeConnectDLL\obj\x86\Debug\GettyeConnectDLL.pdb

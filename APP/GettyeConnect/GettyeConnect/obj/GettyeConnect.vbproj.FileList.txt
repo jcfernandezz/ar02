@@ -1,0 +1,15 @@
+bin\Debug\GettyeConnect.exe
+bin\Debug\GettyeConnect.pdb
+bin\Debug\GettyeConnect.xml
+bin\Debug\Interop.ADODB.dll
+bin\Debug\Interop.RDO.dll
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Interop.ADODB.dll
+obj\Debug\Interop.RDO.dll
+obj\Debug\GettyeConnect.vbproj.ResolveComReference.cache
+obj\Debug\GettyeConnect.Form1.resources
+obj\Debug\GettyeConnect.Resources.resources
+obj\Debug\GettyeConnect.vbproj.GenerateResource.Cache
+obj\Debug\GettyeConnect.exe
+obj\Debug\GettyeConnect.xml
+obj\Debug\GettyeConnect.pdb

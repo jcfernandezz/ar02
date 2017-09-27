@@ -1,0 +1,1 @@
+En esta carpeta deben estar los objetos sql de la integración

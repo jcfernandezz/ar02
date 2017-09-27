@@ -1,0 +1,35 @@
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\Interop.ADODB.dll
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.vbproj.ResolveComReference.cache
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.exe
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.xml
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.pdb
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\GettyeConnectAuto.exe
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\GettyeConnectAuto.pdb
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\GettyeConnectAuto.xml
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\Interop.ADODB.dll
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.Form1.resources
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.Resources.resources
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.vbproj.GenerateResource.Cache
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\GettyeConnectAuto.exe.config
+C:\Users\consultor\Documents\Visual Studio 2010\Projects\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\Microsoft.Dynamics.GP.eConnect.dll
+C:\GETTY\GettyIntegracionMS\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\GettyeConnectAuto.exe.config
+C:\GETTY\GettyIntegracionMS\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\Interop.ADODB.dll
+C:\GETTY\GettyIntegracionMS\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.vbproj.ResolveComReference.cache
+C:\GETTY\GettyIntegracionMS\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.exe
+C:\GETTY\GettyIntegracionMS\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.xml
+C:\GETTY\GettyIntegracionMS\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.pdb
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\GettyeConnectAuto.exe.config
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\Interop.ADODB.dll
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.vbproj.ResolveComReference.cache
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.exe
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.xml
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.pdb
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\GettyeConnectAuto.exe
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\GettyeConnectAuto.pdb
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\GettyeConnectAuto.xml
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\Microsoft.Dynamics.GP.eConnect.dll
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\bin\Debug\Interop.ADODB.dll
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.vbprojResolveAssemblyReference.cache
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.Form1.resources
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.Resources.resources
+C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectAuto\GettyeConnectAuto\obj\Debug\GettyeConnectAuto.vbproj.GenerateResource.Cache
