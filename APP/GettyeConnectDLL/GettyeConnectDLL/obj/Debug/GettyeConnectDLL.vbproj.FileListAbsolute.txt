@@ -37,3 +37,16 @@ C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\GettyeConn
 C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\GettyeConnectDLL\obj\Debug\GettyeConnectDLL.dll
 C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\GettyeConnectDLL\obj\Debug\GettyeConnectDLL.xml
 C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnectDLL\GettyeConnectDLL\obj\Debug\GettyeConnectDLL.pdb
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnectDLL\GettyeConnectDLL\bin\Debug\GettyeConnectDLL.dll
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnectDLL\GettyeConnectDLL\bin\Debug\GettyeConnectDLL.pdb
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnectDLL\GettyeConnectDLL\bin\Debug\GettyeConnectDLL.xml
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnectDLL\GettyeConnectDLL\bin\Debug\GettyeConnectDLL.tlb
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnectDLL\GettyeConnectDLL\bin\Debug\Microsoft.Dynamics.GP.eConnect.dll
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnectDLL\GettyeConnectDLL\obj\Debug\GettyeConnectDLL.vbprojResolveAssemblyReference.cache
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnectDLL\GettyeConnectDLL\obj\Debug\Interop.ADODB.dll
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnectDLL\GettyeConnectDLL\obj\Debug\GettyeConnectDLL.vbproj.ResolveComReference.cache
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnectDLL\GettyeConnectDLL\obj\Debug\GettyeConnectDLL.Resources.resources
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnectDLL\GettyeConnectDLL\obj\Debug\GettyeConnectDLL.vbproj.GenerateResource.Cache
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnectDLL\GettyeConnectDLL\obj\Debug\GettyeConnectDLL.dll
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnectDLL\GettyeConnectDLL\obj\Debug\GettyeConnectDLL.xml
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnectDLL\GettyeConnectDLL\obj\Debug\GettyeConnectDLL.pdb
