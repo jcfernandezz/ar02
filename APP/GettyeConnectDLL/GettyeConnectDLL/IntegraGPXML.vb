@@ -87,7 +87,7 @@ Public Class IntegraGPXML
         gAbrirLog(APPPath)
         'gGrabarLog("Antes Armar Datos", APPPath, CLeidos, CIntegrados, CRechazados)
         ArmarDatos(APPPath)
-        'gGrabarLog("despues Armar Datos", APPPath, CLeidos, CIntegrados, CRechazados)
+        gGrabarLog("despues Armar Datos", APPPath, CLeidos, CIntegrados, CRechazados)
         ArmarDatosSOP(APPPath)
         'gGrabarLog("despues Armar Datos SOP", APPPath, CLeidos, CIntegrados, CRechazados)
 
@@ -347,7 +347,7 @@ Err_Main:
                     bExistsCustomer = False
                     sTaxClasification = cnCustomer.Fields("TaxClasification").Value
                     'gGrabarLog("Leyó TaxClasification ", APPPath, CLeidos, CIntegrados, CRechazados)
-                    If Trim(sINTERID) = "ARTST" Or Trim(sINTERID) = "GARG" Then
+                    If Trim(sINTERID) = "ARTST" Or Trim(sINTERID) = "GARG" Or Trim(sINTERID) = "ARG10" Then
                         If Len(Replace(cnCustomer.Fields("CUIT_NIC").Value, "-", "")) <> 0 Then
                             sCuit = Replace(cnCustomer.Fields("CUIT_NIC").Value, "-", "") & "            80"
                         Else
@@ -382,7 +382,7 @@ Err_Main:
                 End If
                 sXML = sXML & "           " & ArmarLineaXML(sStatementName, "STMTNAME", "1")
                 If Not bExistsCustomer Then
-                    If Trim(sINTERID) = "GARG" Or sINTERID = "ARTST" Then
+                    If Trim(sINTERID) = "GARG" Or sINTERID = "ARTST" Or sINTERID = "ARG10" Then
                         If Trim(sTaxClasification) = "IVA Inscripto" Then
                             sXML = sXML & "           " & ArmarLineaXML("CLIE A", "CUSTCLAS", "")
                         Else
@@ -458,7 +458,7 @@ Err_Main:
 
                 'gGrabarLog("Antes IntegraXML " & sXML, APPPath, CLeidos, CIntegrados, CRechazados)
                 Integrado = IntegraXML(sSERVER, sINTERID, sXML, ErrorIntegracion)
-                'gGrabarLog("Despues IntegraXML " & ErrorIntegracion, APPPath, CLeidos, CIntegrados, CRechazados)
+                gGrabarLog("Despues IntegraXML " & ErrorIntegracion, APPPath, CLeidos, CIntegrados, CRechazados)
                 If Integrado = True Then
                     iIntegrados = iIntegrados + 1
                     ClienteIntegrado = 1
@@ -485,7 +485,7 @@ Err_Main:
 
                         cmd4.CommandType = CommandType.StoredProcedure
 
-                        If Trim(sINTERID) = "ARTST" Or Trim(sINTERID) = "GARG" Then
+                        If Trim(sINTERID) = "ARTST" Or Trim(sINTERID) = "GARG" Or Trim(sINTERID) = "ARG10" Then
                             If Len(Replace(cnCustomer.Fields("CUIT_NIC").Value, "-", "")) <> 0 Then
                                 sCuit = Replace(cnCustomer.Fields("CUIT_NIC").Value, "-", "") & "            80"
                             Else
@@ -752,7 +752,7 @@ Err_Main:
         'Instantiate an eConnectMethods object
         Dim eConnObject As New eConnectMethods
 
-        gGrabarLog("IntegraXML Antes Conexion " & sServer & sCompany, strPath, CLeidos, CIntegrados, CRechazados)
+        gGrabarLog("IntegraXML Conexion " & sServer & "-" & sCompany, strPath, CLeidos, CIntegrados, CRechazados)
         ConnectionString = Conexion(sServer, sCompany)
         'gGrabarLog("IntegraXML Despues Conexion " & sServer & sCompany, "", CLeidos, CIntegrados, CRechazados)
 
@@ -771,7 +771,7 @@ Err_Main:
             'If the update returned TRUE, it was successfully completed
             'MSAL 28-08-2015
             'Se reemplaza eConnectEntryPoint por CreateEntity(), revisar si no hay que reemplazarla por Update Entity o Creaatte Entity
-            gGrabarLog("IntegraTrxXML Antes Entity: " & sXML, strPath, CLeidos, CIntegrados, CRechazados)
+            'gGrabarLog("IntegraTrxXML Antes Entity: " & sXML, strPath, CLeidos, CIntegrados, CRechazados)
             eConnResult = eConnObject.CreateTransactionEntity(ConnectionString, sXML) 'xmlDoc.OuterXml)
             gGrabarLog("IntegraTrxXML DEspues Entity: " & eConnResult, strPath, CLeidos, CIntegrados, CRechazados)
             'eConnResult = eConnObject.eConnect_EntryPoint(ConnectionString, EnumTypes.ConnectionStringType.SqlClient, xmlDoc.OuterXml, EnumTypes.SchemaValidationType.None)
@@ -794,11 +794,11 @@ Err_Main:
 
             'End If
         Catch eConnErr As eConnectException
-            'gGrabarLog("Porque sale con error? 1)", strPath, CLeidos, CIntegrados, CRechazados)
+            gGrabarLog("Porque sale con error? 1)" & eConnErr.Message, strPath, CLeidos, CIntegrados, CRechazados)
             strErrorEconnect = eConnErr.Message
             IntegraTrxXML = False
         Catch ex As ApplicationException
-            'gGrabarLog("Porque sale con error? 2)", strPath, CLeidos, CIntegrados, CRechazados)
+            gGrabarLog("Porque sale con error? 2)", strPath, CLeidos, CIntegrados, CRechazados)
             strErrorEconnect = ex.Message
             IntegraTrxXML = False
         End Try
@@ -863,10 +863,17 @@ Err_Main:
         'rs.CursorType = CursorTypeEnum.adOpenStatic
         'rs.CommandTimeout = 0
 
+        'MSAL 28-06-2018.Actualizo en el mismo servidor que levanto la vista INT_USER_VIEW
+        'sConeccion = "Provider=sqloledb;" & _
+        '   "Data Source=" & sSERVIDOR & ";" & _
+        '   "Initial Catalog=" & INTERID & ";" & _
+        '    "Integrated Security=SSPI"
+
         sConeccion = "Provider=sqloledb;" & _
-           "Data Source=" & sSERVIDOR & ";" & _
-           "Initial Catalog=" & INTERID & ";" & _
+           "Data Source=" & strSrv & ";" & _
+           "Initial Catalog=" & strDba & ";" & _
             "Integrated Security=SSPI"
+
 
         If CustIntegrado = 1 Then
             IntegradoSTR = " sync_version_erp = sync_version_st, "
@@ -907,10 +914,16 @@ Err_Main:
         'rs.CursorType = CursorTypeEnum.adOpenStatic
         'rs.CommandTimeout = 0
 
+        'sConeccion = "Provider=sqloledb;" & _
+        '   "Data Source=" & sSERVIDOR & ";" & _
+        '   "Initial Catalog=" & INTERID & ";" & _
+        '    "Integrated Security=SSPI"
+
         sConeccion = "Provider=sqloledb;" & _
-           "Data Source=" & sSERVIDOR & ";" & _
-           "Initial Catalog=" & INTERID & ";" & _
-            "Integrated Security=SSPI"
+          "Data Source=" & strSrv & ";" & _
+          "Initial Catalog=" & strDba & ";" & _
+           "Integrated Security=SSPI"
+
         IntegradaFC = 0
         If IntegradaSO Then
             IntegradaFC = 1
@@ -926,11 +939,13 @@ Err_Main:
                     " ErrorStr = '" & Microsoft.VisualBasic.Left(Mensaje, 255) & "' " & _
                     " WHERE invoice_id = " & CStr(ID)
 
-        gGrabarLog("Antes rs.Open " & sSERVIDOR & INTERID, strPath, CLeidos, CIntegrados, CRechazados)
-        gGrabarLog(sSERVIDOR & " " & INTERID & " " & strDba & " " & strSQL, strPath, CLeidos, CIntegrados, CRechazados)
+        'gGrabarLog("Antes rs.Open " & strSrv & strDba, strPath, CLeidos, CIntegrados, CRechazados)
+        gGrabarLog("SQL " & strSrv & ":" & strDba & " : " & INTERID & " : " & strDba & " --> ", strPath, CLeidos, CIntegrados, CRechazados)
+        gGrabarLog("-- " & strSQL & " --> ", strPath, CLeidos, CIntegrados, CRechazados)
         On Error GoTo ActualizaErrores
         rs.Open(sConeccion)
-        gGrabarLog("Despues rs.Open" & sSERVIDOR & INTERID, strPath, CLeidos, CIntegrados, CRechazados)
+        'gGrabarLog("-- ", strPath, CLeidos, CIntegrados, CRechazados)
+        'gGrabarLog("Despues rs.Open" & strSrv & strDba, strPath, CLeidos, CIntegrados, CRechazados)
         rs.Execute(strSQL)
 
         rs.Close()
@@ -940,7 +955,7 @@ Err_Main:
         ActualizaSOP = True
         Exit Function
 ActualizaErrores:
-        gGrabarLog(sSERVIDOR & " " & INTERID & " " & strDba & " " & strSQL, strPath, CLeidos, CIntegrados, CRechazados)
+        gGrabarLog("Actualiza " & sSERVIDOR & " " & INTERID & " " & strDba & " " & strSQL, strPath, CLeidos, CIntegrados, CRechazados)
         Exit Function
     End Function
     Public Function ActualizaCust(ByVal sSERVER)
@@ -1007,8 +1022,14 @@ ActualizaErrores:
         Dim Lote As String
         Dim ItemDesc As String
         Dim SOPID As String
+        'MSAL 08-03-2018
+        Dim SOPLETRA As String
+        'MSAL 08-03-2018
         Dim TaxID, TaxPlan, sCUSTCLAS As String
         Dim Descuento, Impuesto, TotalDoc As Double
+        'MSAL 16-01-2017
+        Dim TotalDocPAgo As Double
+        'MSAL 16-01-2017
         Dim SopType As Integer
         Dim SOPNUMBE As String
         Dim mycon As SqlConnection
@@ -1017,6 +1038,7 @@ ActualizaErrores:
         Dim sSERVER As String
         Dim FinRecordset As Boolean
         Dim cuenta As Integer = 0
+        Dim totalprice As Double
 
         FinRecordset = False
 
@@ -1031,18 +1053,20 @@ ActualizaErrores:
 
         SQLSTR = "SELECT * FROM " & strDba & "..INT_INVOICE_VIEW ORDER BY invoice_id, soptype, article_id "
 
-        'gGrabarLog("Armar Datos SOP -1", APPPath, CLeidos, CIntegrados, CRechazados)
+        'gGrabarLog("Armar Datos SOP", APPPath, CLeidos, CIntegrados, CRechazados)
         cnCustomer = New ADODB.Recordset
         cnCustomer.CursorType = CursorTypeEnum.adOpenStatic
         'cnCustomer.ActiveConnection.CommandTimeout = 0
 
         'gGrabarLog("Armar Datos SOP 0 " & sConnection, APPPath, CLeidos, CIntegrados, CRechazados)
-        'gGrabarLog("Armar Datos SOP 0 " & SQLSTR, APPPath, CLeidos, CIntegrados, CRechazados)
+        gGrabarLog("---------------------------------------------------------", APPPath, CLeidos, CIntegrados, CRechazados)
+        gGrabarLog("---------------------------------------------------------", APPPath, CLeidos, CIntegrados, CRechazados)
+        gGrabarLog("Armar Datos SOP --> " & sConnection & " " & SQLSTR, APPPath, CLeidos, CIntegrados, CRechazados)
         cnCustomer.Open(SQLSTR, sConnection)
         'gGrabarLog("Armar Datos SOP 0 ", APPPath, CLeidos, CIntegrados, CRechazados)
 
         On Error GoTo SOPErrores
-        gGrabarLog("cnCustomer.Open(SQLSTR, sConnection)", APPPath, CLeidos, CIntegrados, CRechazados)
+        'gGrabarLog("cnCustomer.Open(SQLSTR, sConnection)", APPPath, CLeidos, CIntegrados, CRechazados)
         ' 0 If Trim(sINTERID) <> "GBRA" Then
         If Trim(sINTERID) <> "GBRA" Then
             dFechaEmision = Format(Now, "MM-dd-yyyy")
@@ -1054,13 +1078,12 @@ ActualizaErrores:
             'gGrabarLog("If Not cnCustomer.EOF", APPPath, CLeidos, CIntegrados, CRechazados)
             cnCustomer.MoveFirst()
             'gGrabarLog("cnCustomer.MoveFirst()", APPPath, CLeidos, CIntegrados, CRechazados)
-            'gGrabarLog("Primero", APPPath, CLeidos, CIntegrados, CRechazados)
+            gGrabarLog("Inicio Factura -->", APPPath, CLeidos, CIntegrados, CRechazados)
             ' 2 While Not cnCustomer.EOF
             While Not cnCustomer.EOF
                 FinRecordset = False
                 'gGrabarLog("While Not cnCustomer.EOF", APPPath, CLeidos, CIntegrados, CRechazados)
                 sSERVER = Trim(cnCustomer.Fields("SERVIDOR").Value)
-                'gGrabarLog("Armar Datos SOP 5 " & sSERVER, APPPath, CLeidos, CIntegrados, CRechazados)
                 SOPNUMBE = ""
                 ' 3 If Trim(sINTERID) = "GBRA" Then
                 If Trim(sINTERID) = "GBRA" Then
@@ -1100,15 +1123,32 @@ ActualizaErrores:
                 'gGrabarLog("Armar Datos SOP 7b post CUSTCLASSID " & sSERVER, APPPath, CLeidos, CIntegrados, CRechazados)
                 invoice_id = cnCustomer.Fields("invoice_id").Value
                 Lote = CStr(Year(Today())) & Microsoft.VisualBasic.Right("0" & CStr(Month(Today())), 2) & Microsoft.VisualBasic.Right("0" & CStr(Microsoft.VisualBasic.Day(Today())), 2)
+
+                gGrabarLog("Levanto Articulo --> " & sSERVER & " id:" & CStr(invoice_id) & " txt:" & SOPNUMBE, APPPath, CLeidos, CIntegrados, CRechazados)
+
                 'gGrabarLog("Segundo5", APPPath, CLeidos, CIntegrados, CRechazados)
                 ItemDesc = Trim(cnCustomer.Fields("article_name").Value) + " " + cnCustomer.Fields("article_description").Value
                 SopType = cnCustomer.Fields("soptype").Value
                 SOPID = DOCID(sSERVER, sINTERID, SopType, APPPath)
                 'gGrabarLog("Segundo6", APPPath, CLeidos, CIntegrados, CRechazados)
                 ' 6 If Trim(sINTERID) = "GARG" Or sINTERID = "ARTST" Then
-                If Trim(sINTERID) = "GARG" Or sINTERID = "ARTST" Then
-                    SOPID = Microsoft.VisualBasic.Left(SOPID, 3) & Microsoft.VisualBasic.Mid(sCUSTCLAS, 6, 1) & _
-                                Microsoft.VisualBasic.Mid(SOPID, 5, 11)
+                If Trim(sINTERID) = "GARG" Or sINTERID = "ARTST" Or sINTERID = "ARG10" Then
+                    'MSAL 08-03-2018
+                    'If Microsoft.VisualBasic.Mid(sCUSTCLAS, 6, 1) = "A" Then
+                    'SOPLETRA = "M"
+                    'Else
+                    SOPLETRA = Microsoft.VisualBasic.Mid(sCUSTCLAS, 6, 1)
+                    'End If
+                    'MSAL 08-03-2018 - Al finalizar sacar el tema de la letra M para 
+                    If SOPLETRA = "M" Then
+                        SOPID = Microsoft.VisualBasic.Left(SOPID, 3) & SOPLETRA & _
+                                    "0003"
+
+                    Else
+                        SOPID = Microsoft.VisualBasic.Left(SOPID, 3) & SOPLETRA & _
+                                    "0001"
+
+                    End If
                 Else
                     If Trim(sINTERID) = "GBRA" Then
                         If Left(SOPNUMBE, 1) = "C" Then
@@ -1130,6 +1170,11 @@ ActualizaErrores:
                 End If
                 sPaymentType = cnCustomer.Fields("payment_type").Value
                 sTxnID = Trim(cnCustomer.Fields("txn_id").Value)
+                If Trim(sINTERID) = "GCOL" Or Trim(sINTERID) = "COL10" Then
+                    If Trim(sPaymentType) <> "invoice" And Trim(sPaymentType) <> "" And Trim(sTxnID) <> "" Then
+                        TaxPlan = "V-IVA"
+                    End If
+                End If
                 sXML = sXML & "		    <taSopLineIvcInsert>" & vbNewLine
                 sXML = sXML & "           " & ArmarLineaXML(CStr(cnCustomer.Fields("soptype").Value), "SOPTYPE", "")
                 ' 8 If Trim(sINTERID) <> "GBRA" Then
@@ -1158,6 +1203,7 @@ ActualizaErrores:
                     Descuento = Int(CDbl(cnCustomer.Fields("discount").Value) + 0.5)
                     Impuesto = Int(CDbl(cnCustomer.Fields("vat").Value) + 0.5)
                     TotalDoc = Int((Subtotal - Descuento + Impuesto) + 0.5)
+                    TotalDocPAgo = TotalDoc   'MSAL 05-06-2018
                     sXML = sXML & "           " & ArmarLineaXML(CStr(Int(CDbl(cnCustomer.Fields("price").Value) + 0.5)), "UNITPRCE", "")
                     sXML = sXML & "           " & ArmarLineaXML(CStr(Int(CDbl(cnCustomer.Fields("price").Value) + 0.5)), "XTNDPRCE", "")
                 Else
@@ -1171,8 +1217,12 @@ ActualizaErrores:
                     End If
                     Subtotal = Subtotal + Redondear(CDbl(cnCustomer.Fields("price").Value))
                     Descuento = Redondear(CDbl(cnCustomer.Fields("discount").Value))
-                    Impuesto = Redondear(CDbl(cnCustomer.Fields("vat").Value))
+                    If Trim(sINTERID) <> "GMOPE" And Trim(sINTERID) <> "GMSER" And Trim(sINTERID) <> "COL10" And Trim(sINTERID) <> "MEX10" Then
+                        Impuesto = Redondear(CDbl(cnCustomer.Fields("vat").Value))
+                    End If
+                    TotalDocPAgo = Redondear((Subtotal - Descuento + Redondear(CDbl(cnCustomer.Fields("vat").Value)))) 'MSAL 16-01-2017
                     TotalDoc = Redondear((Subtotal - Descuento + Impuesto))
+
                     sXML = sXML & "           " & ArmarLineaXML(CStr(Redondear(CDbl(cnCustomer.Fields("price").Value))), "UNITPRCE", "")
                     sXML = sXML & "           " & ArmarLineaXML(CStr(Redondear(CDbl(cnCustomer.Fields("price").Value))), "XTNDPRCE", "")
                     ' 9 Cierra
@@ -1186,6 +1236,13 @@ ActualizaErrores:
                     sXML = sXML + "           " & ArmarLineaXML(sLPRSNID, "SLPRSNID", "1")
                     ' 12 Cierra
                 End If
+                'gGrabarLog("Cuarto 1", APPPath, CLeidos, CIntegrados, CRechazados)
+                If Trim(sINTERID) = "GCOL" Or Trim(sINTERID) = "COL10" Then
+                    If Trim(sPaymentType) <> "invoice" And Trim(sPaymentType) <> "" And Trim(sTxnID) <> "" Then
+                        sXML = sXML & "           " & ArmarLineaXML(TaxPlan, "TAXSCHID", "")
+                    End If
+
+                End If
                 sXML = sXML & "           " & ArmarLineaXML(cnCustomer.Fields("img_url").Value, "ShipToName", "1")
                 sXML = sXML & "           " & ArmarLineaXML(CStr(cnCustomer.Fields("article_id").Value), "INTEGRATIONID", "")
                 'sXML = sXML & "           " & ArmarLineaXML(Chr(34) & Trim(cnCustomer.Fields("info").Value & Chr(34)), "CMMTTEXT")
@@ -1195,7 +1252,8 @@ ActualizaErrores:
 
                 sXML2 = "		</taSopLineIvcInsert_Items>	" & vbNewLine
                 ' 13 If Trim(sINTERID) <> "GCOL" Then
-                If Trim(sINTERID) <> "GCOL" Then
+                'gGrabarLog("Cuarto 2", APPPath, CLeidos, CIntegrados, CRechazados)
+                If Trim(sINTERID) <> "GCOL" And Trim(sINTERID) <> "COL10" And Trim(sINTERID) <> "GMOPE" And Trim(sINTERID) <> "GMSER" And Trim(sINTERID) <> "MEX10" Then
                     ' 14 If CDbl(cnCustomer.Fields("vat").Value) <> 0 Then
                     If CDbl(cnCustomer.Fields("vat").Value) <> 0 Then
                         sXML2 = sXML2 + "		 <taSopLineIvcTaxInsert>" & vbNewLine
@@ -1218,12 +1276,14 @@ ActualizaErrores:
                     End If
                     ' 13 Cierra
                 End If
+                'gGrabarLog("Cuarto 3", APPPath, CLeidos, CIntegrados, CRechazados)
                 ' 16 If Trim(sPaymentType) <> "invoice" And Trim(sPaymentType) <> "" And Trim(sINTERID) <> "GBRA" Then
                 If Trim(sPaymentType) <> "invoice" And Trim(sPaymentType) <> "" And Trim(sINTERID) <> "GBRA" Then
                     sXML2 = sXML2 + "		 <taCreateSopPaymentInsertRecord_Items>" & vbNewLine
                     sXML2 = sXML2 + "		 	<taCreateSopPaymentInsertRecord>" & vbNewLine
                     sXML2 = sXML2 + "		 			" & ArmarLineaXML(CStr(cnCustomer.Fields("soptype").Value), "SOPTYPE", "")
                     ' 17 If Trim(sINTERID) <> "GBRA" Then
+                    'gGrabarLog("Cuarto 4", APPPath, CLeidos, CIntegrados, CRechazados)
                     If Trim(sINTERID) <> "GBRA" Then
                         sXML2 = sXML2 + "           <SOPNUMBE></SOPNUMBE>" & vbNewLine
                     Else
@@ -1233,13 +1293,30 @@ ActualizaErrores:
                     sXML2 = sXML2 + "		 			" & ArmarLineaXML(sCliente, "CUSTNMBR", "1")
                     sXML2 = sXML2 + "		 			" & ArmarLineaXML("", "CUSTNAME", "1")
                     sXML2 = sXML2 + "		 			" & ArmarLineaXML(dFechaEmision, "DOCDATE", "")
-                    sXML2 = sXML2 + "		 			" & ArmarLineaXML(CStr(Redondear(TotalDoc)), "DOCAMNT", "")
+
+                    'gGrabarLog("Cuarto 5", APPPath, CLeidos, CIntegrados, CRechazados)
+
+                    If Trim(sINTERID) = "GCOL" Or Trim(sINTERID) = "COL10" Then 'MSAL 16-01-2017
+                        'gGrabarLog("Cuarto 5.0", APPPath, CLeidos, CIntegrados, CRechazados)
+                        sXML2 = sXML2 + "		 			" & ArmarLineaXML(CStr(Redondear(CDbl(cnCustomer.Fields("totalprice").Value))), "DOCAMNT", "")
+                        'gGrabarLog("Cuarto 5.1", APPPath, CLeidos, CIntegrados, CRechazados)
+                    Else
+                        'gGrabarLog("Cuarto 5.1.5", APPPath, CLeidos, CIntegrados, CRechazados)
+                        sXML2 = sXML2 + "		 			" & ArmarLineaXML(CStr(Redondear(TotalDocPAgo)), "DOCAMNT", "") 'MSAL 16-01-2017
+                        'gGrabarLog("Cuarto 5.2", APPPath, CLeidos, CIntegrados, CRechazados)
+                    End If
+                    'Else 'MSAL 16-01-2017
+                    'sXML2 = sXML2 + "		 			" & ArmarLineaXML(CStr(Redondear(TotalDoc)), "DOCAMNT", "") 'Linea Original
+                    'End If 'MSAL 16-01-2017
+                    'gGrabarLog("Cuarto 6", APPPath, CLeidos, CIntegrados, CRechazados)
                     sXML2 = sXML2 + "		 			<CHEKBKID>" & Trim(UCase(sPaymentType)) & "</CHEKBKID>" & vbNewLine
                     sXML2 = sXML2 + "		 			" & ArmarLineaXML(Trim(sTxnID), "CHEKNMBR", "1")
-                    sXML2 = sXML2 + "		 			<PYMTTYPE>5</PYMTTYPE>" & vbNewLine
+                    sXML2 = sXML2 + "		 			<PYMTTYPE>4</PYMTTYPE>" & vbNewLine
+                    'sXML2 = sXML2 + "		 			<PYMTTYPE>5</PYMTTYPE>" & vbNewLine
                     sXML2 = sXML2 + "		 	</taCreateSopPaymentInsertRecord>" & vbNewLine
                     sXML2 = sXML2 + "		 </taCreateSopPaymentInsertRecord_Items>" & vbNewLine
                     ' 16 Cierra
+                    'gGrabarLog("Cuarto 7", APPPath, CLeidos, CIntegrados, CRechazados)
                 End If
                 'gGrabarLog("Quinto", APPPath, CLeidos, CIntegrados, CRechazados)
                 sXML2 = sXML2 & "		<taSopHdrIvcInsert>" & vbNewLine
@@ -1261,7 +1338,7 @@ ActualizaErrores:
                 End If
                 'sXML2 = sXML2 + "			" & ArmarLineaXML(CStr(CDbl(cnCustomer.Fields("vat").Value)), "TAXAMNT", "")
                 ' 20 If Trim(sINTERID) <> "GCOL" Then
-                If Trim(sINTERID) <> "GCOL" Then
+                If Trim(sINTERID) <> "GCOL" And Trim(sINTERID) <> "COL10" And Trim(sINTERID) <> "GMOPE" And Trim(sINTERID) <> "GMSER" And Trim(sINTERID) <> "MEX10" Then
                     sXML2 = sXML2 + "			" & ArmarLineaXML(CStr(Redondear(Impuesto)), "TAXAMNT", "")
                     ' 20 Cierra
                 End If
@@ -1275,7 +1352,8 @@ ActualizaErrores:
                     sXML2 = sXML2 + "			" & ArmarLineaXML(CStr(cnCustomer.Fields("NOTAFISCAL").Value), "CSTPONBR", "")
                     ' 21 Cierra
                 End If
-                ' 22 If Trim(sINTERID) <> "GCOL" Then
+                ' 22 If Trim(sINTERID) <> "GCOL" Then  06/01/2018 agregado GMOPE GMSER y MEX10 AL IF
+                'If Trim(sINTERID) <> "GCOL" And Trim(sINTERID) <> "COL10" And Trim(sINTERID) <> "GMOPE" And Trim(sINTERID) <> "GMSER" And Trim(sINTERID) <> "MEX10" Then
                 If Trim(sINTERID) <> "GCOL" Then
                     sXML2 = sXML2 + "			" & ArmarLineaXML(CStr(Redondear(Subtotal)), "SUBTOTAL", "")
                     sXML2 = sXML2 + "			" & ArmarLineaXML(CStr(Redondear(TotalDoc)), "DOCAMNT", "")
@@ -1306,11 +1384,11 @@ ActualizaErrores:
                     ' 26 Cierra
                 End If
                 ' 27 If Trim(sINTERID) <> "GCOL" Then
-                If Trim(sINTERID) <> "GCOL" Then
+                If Trim(sINTERID) <> "GCOL" And Trim(sINTERID) <> "COL10" And Trim(sINTERID) <> "GMOPE" And Trim(sINTERID) <> "GMSER" And Trim(sINTERID) <> "MEX10" Then
                     sXML2 = sXML2 + "			" & ArmarLineaXML("1", "USINGHEADERLEVELTAXES", "")
                 Else
                     ' 28 If Trim(sINTERID) <> "GBRA" Then
-                    If Trim(sINTERID) <> "GBRA" Then
+                    If Trim(sINTERID) <> "GBRA" And (Trim(sINTERID) = "GMOPE" Or Trim(sINTERID) = "GMSER" Or Trim(sINTERID) = "COL10" Or Trim(sINTERID) = "MEX10") Then
                         sXML2 = sXML2 + "			" & ArmarLineaXML("1", "CREATETAXES", "")
                     Else
                         sXML2 = sXML2 + "			" & ArmarLineaXML("0", "CREATETAXES", "")
@@ -1324,7 +1402,7 @@ ActualizaErrores:
                 'sXML2 = sXML2 + "           " & ArmarLineaXML(Chr(34) & Trim(cnCustomer.Fields("billing_address").Value & Chr(34)), "CMMTTEXT")
                 'sXML2 = sXML2 + "           " & ArmarLineaXML(Chr(34) & Trim(cnCustomer.Fields("shipping_address").Value & Chr(34)), "NOTETEXT")
                 ' 29 If Trim(sINTERID) = "GCOL" Then
-                If Trim(sINTERID) = "GCOL" Then
+                If Trim(sINTERID) = "GCOL" Or Trim(sINTERID) = "COL10" Then
                     sXML2 = sXML2 + "			" & ArmarLineaXML("1", "DEFPRICING", "")
                     ' 29 Cierra
                 End If
@@ -1366,11 +1444,11 @@ ActualizaErrores:
                 ' 34 If FinFactura Then
                 If FinFactura Then
                     'gGrabarLog("Fin Factura " & CStr(invoice_id) & " " & "Final", APPPath, CLeidos, CIntegrados, CRechazados)
-                    gGrabarLog("Fin factura " & sXML + sXML2, APPPath, CLeidos, CIntegrados, CRechazados)
+                    gGrabarLog("Integro Factura " & sXML + sXML2, APPPath, CLeidos, CIntegrados, CRechazados)
                     ErrorIntegracion = ""
-                    gGrabarLog("Antes llamada IntegraTrxXML", APPPath, CLeidos, CIntegrados, CRechazados)
+                    'gGrabarLog("Antes llamada IntegraTrxXML", APPPath, CLeidos, CIntegrados, CRechazados)
                     Integrado = IntegraTrxXML(sSERVER, sINTERID, sXML + sXML2, ErrorIntegracion)
-                    gGrabarLog("Despues llamada IntegraTrxXML", APPPath, CLeidos, CIntegrados, CRechazados)
+                    'gGrabarLog("Despues llamada IntegraTrxXML", APPPath, CLeidos, CIntegrados, CRechazados)
                     ' 35 If Integrado = True Then
                     If Integrado = True Then
                         CLeidos = CLeidos + 1
@@ -1383,9 +1461,9 @@ ActualizaErrores:
                         ' 35 Cierra
                     End If
                     'Actualizado = ActualizaSOP(invoice_id, sINTERID)
-                    'GrabarLog("Antes Actualiza SOP " & CStr(invoice_id) & " " & ErrorIntegracion, APPPath, CLeidos, CIntegrados, CRechazados)
+                    gGrabarLog("Antes Actualiza SOP " & CStr(invoice_id) & " " & ErrorIntegracion & " --> ", APPPath, CLeidos, CIntegrados, CRechazados)
                     Actualizado = ActualizaSOP(sSERVER, invoice_id, sINTERID, FechaProceso, Integrado, ErrorIntegracion)
-                    'gGrabarLog("Despues Actualiza SOP " & CStr(invoice_id), APPPath, CLeidos, CIntegrados, CRechazados)
+                    gGrabarLog("Inicio Factura", APPPath, CLeidos, CIntegrados, CRechazados)
                     ' 36 If VerificarACA_Set_Invoice_Error(sSERVER, sINTERID) Then
                     'If VerificarACA_Set_Invoice_Error(sSERVER, sINTERID) And Not Integrado Then
                     'gGrabarLog("VerificarACA_Set_Invoice_Error " & CStr(invoice_id), APPPath, CLeidos, CIntegrados, CRechazados)
@@ -1413,6 +1491,7 @@ ActualizaErrores:
                     sXML = sXML & "		<taSopLineIvcInsert_Items>" & vbNewLine
                     Subtotal = 0
                     SubtotalNeto = 0
+                    Impuesto = 0
                 End If
                 'gGrabarLog("Octavo", APPPath, CLeidos, CIntegrados, CRechazados)
                 ' 34 Cierra

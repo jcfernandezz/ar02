@@ -39,3 +39,10 @@ C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect
 C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.Form1.resources
 C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.Resources.resources
 C:\GETTY\GettyIntegracionMS\InterfazVentas\trunk\src\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.vbproj.GenerateResource.Cache
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnect\GettyeConnect\bin\Debug\GettyeConnect.exe.config
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnect\GettyeConnect\obj\Debug\Interop.ADODB.dll
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnect\GettyeConnect\obj\Debug\Interop.RDO.dll
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.vbproj.ResolveComReference.cache
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.exe
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.xml
+C:\GETTY\VisualStudio\IntegracionesGetty\GettyeConnect\GettyeConnect\obj\Debug\GettyeConnect.pdb
