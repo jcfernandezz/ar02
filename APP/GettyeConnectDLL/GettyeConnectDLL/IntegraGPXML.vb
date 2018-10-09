@@ -1311,8 +1311,12 @@ ActualizaErrores:
                     'gGrabarLog("Cuarto 6", APPPath, CLeidos, CIntegrados, CRechazados)
                     sXML2 = sXML2 + "		 			<CHEKBKID>" & Trim(UCase(sPaymentType)) & "</CHEKBKID>" & vbNewLine
                     sXML2 = sXML2 + "		 			" & ArmarLineaXML(Trim(sTxnID), "CHEKNMBR", "1")
-                    sXML2 = sXML2 + "		 			<PYMTTYPE>4</PYMTTYPE>" & vbNewLine
-                    'sXML2 = sXML2 + "		 			<PYMTTYPE>5</PYMTTYPE>" & vbNewLine
+                    'MSAL 09/20/2018
+                    If Trim(sINTERID) = "MEX10" Then
+                        sXML2 = sXML2 + "		 			<PYMTTYPE>4</PYMTTYPE>" & vbNewLine
+                    Else
+                        sXML2 = sXML2 + "		 			<PYMTTYPE>5</PYMTTYPE>" & vbNewLine
+                    End If
                     sXML2 = sXML2 + "		 	</taCreateSopPaymentInsertRecord>" & vbNewLine
                     sXML2 = sXML2 + "		 </taCreateSopPaymentInsertRecord_Items>" & vbNewLine
                     ' 16 Cierra
