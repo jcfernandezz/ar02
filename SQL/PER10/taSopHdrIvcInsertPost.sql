@@ -236,13 +236,36 @@ EXEC TII_GETTY_SOP_AA @I_vSOPTYPE, @I_vSOPNUMBE
 	DECLARE @cod_detraccion               char(5) = '00';
 	declare @nsa_Cod_Transac              char(5) = '0101';
 
-	if @I_vDOCAMNT>700 then 
+	if @I_vDOCAMNT>700  
 	begin
 		set @cod_detraccion = '022'
 		set @nsa_Cod_Transac = '1001'
 	end
 
-	exec dbo.sp_nsaCOA_GL00014InsUpd	'9999999999001',	@I_vCUSTNMBR,	'Generico',	@cod_detraccion,	'',	'',	0,	@I_vSOPNUMBE,	@I_vSOPTYPE,	@I_vDOCDATE,	@nsa_Cod_Transac,	'00',	'1/1/1900',	'',	'1',	@I_vDOCDATE,	0,	'',	'',	0,	0,	0,	@I_vDOCAMNT
+	exec dbo.sp_nsaCOA_GL00014InsUpd
+	'9999999999001',
+	@I_vCUSTNMBR,
+	'Generico',
+	@cod_detraccion,
+	'',
+	'',
+	0,
+	@I_vSOPNUMBE,
+	@I_vSOPTYPE,
+	@I_vDOCDATE,
+	@nsa_Cod_Transac,
+	'00',
+	'1/1/1900',
+	'',
+	'1',
+	@I_vDOCDATE,
+	0,
+	'',
+	'',
+	0,
+	0,
+	0,
+	@I_vDOCAMNT
 
 select @O_iErrorState = 0  
 return (@O_iErrorState)  

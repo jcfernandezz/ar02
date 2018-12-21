@@ -1142,11 +1142,11 @@ ActualizaErrores:
                     'MSAL 08-03-2018 - Al finalizar sacar el tema de la letra M para 
                     If SOPLETRA = "M" Then
                         SOPID = Microsoft.VisualBasic.Left(SOPID, 3) & SOPLETRA & _
-                                    "0003"
+                                    "00003"
 
                     Else
                         SOPID = Microsoft.VisualBasic.Left(SOPID, 3) & SOPLETRA & _
-                                    "0001"
+                                    "00004"
 
                     End If
                 Else
