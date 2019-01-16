@@ -8,6 +8,7 @@ GO
 SET QUOTED_IDENTIFIER OFF
 GO
 
+--15/1/19 jcf Agrega ingreso de impuestos en tabla de Localización andina
 
 
 ALTER PROCEDURE [dbo].[taSopHdrIvcInsertPost]   @I_vSOPTYPE smallint,   @I_vDOCID char(15),   @I_vSOPNUMBE char(21),    
@@ -228,21 +229,70 @@ BEGIN
 	END
 
 	INSERT INTO INT_SOPHDR SELECT @I_vSOPTYPE, @I_vSOPNUMBE, @I_vINTEGRATIONID, @I_vDOCAMNT, @I_vTAXAMNT, (SELECT RTRIM(CONVERT(char(255), memo)) from INTDB2..ERP_Invoice WHERE invoice_id = CONVERT(int, @I_vINTEGRATIONID))
-END
 
-EXEC TII_GETTY_SOP_AA @I_vSOPTYPE, @I_vSOPNUMBE
+	--Localización andina requiere ingresar los impuestos
+	DECLARE @TAXAMNT NUMERIC(19,5), @ORTAXAMT NUMERIC(19,5)
+	DECLARE @WTHAMNT NUMERIC(19,5), @OWTHAMNT NUMERIC(19,5)
+	
+	SELECT @TAXAMNT = STAXAMNT+FRTTXAMT+MSCTXAMT, @ORTAXAMT = ORSLSTAX+ORFRTTAX+ORMSCTAX
+	FROM SOP10105 WHERE SOPTYPE = @I_vSOPTYPE AND SOPNUMBE = @I_vSOPNUMBE AND LNITMSEQ = 0 AND STAXAMNT+FRTTXAMT+MSCTXAMT > 0
+	
+	SELECT @TAXAMNT = ISNULL(@TAXAMNT, 0)
+	SELECT @ORTAXAMT = ISNULL(@ORTAXAMT, 0)
+	
+	SELECT @WTHAMNT = STAXAMNT+FRTTXAMT+MSCTXAMT, @OWTHAMNT = ORSLSTAX+ORFRTTAX+ORMSCTAX
+	FROM SOP10105 
+	WHERE SOPTYPE = @I_vSOPTYPE AND SOPNUMBE = @I_vSOPNUMBE AND LNITMSEQ = 0 AND STAXAMNT+FRTTXAMT+MSCTXAMT < 0
+	
+	SELECT @WTHAMNT = ISNULL(@WTHAMNT, 0)
+	SELECT @OWTHAMNT = ISNULL(@OWTHAMNT, 0)
+	
+	IF EXISTS(SELECT SOPNUMBE FROM nsatw_sop10100 WHERE SOPTYPE = @I_vSOPTYPE AND SOPNUMBE = @I_vSOPNUMBE)
+	BEGIN
+		DELETE nsatw_sop10100 WHERE SOPTYPE = @I_vSOPTYPE AND SOPNUMBE = @I_vSOPNUMBE
+	END
+
+	INSERT INTO nsatw_sop10100 (SOPTYPE,SOPNUMBE,	BCHSOURC,		BACHNUMB,	APPLYTAX,TAXAMNT,ORTAXAMT,APPLYWTH,	WTHAMNT,	OWTHAMNT)
+					SELECT @I_vSOPTYPE, @I_vSOPNUMBE, 'Sales Entry', @I_vBACHNUMB, 1, @TAXAMNT, @ORTAXAMT, 1,		@WTHAMNT,	@OWTHAMNT;
 
 	--Agrega datos adicionales para FE ubl2.1
 	DECLARE @cod_detraccion               char(5) = '00';
 	declare @nsa_Cod_Transac              char(5) = '0101';
 
-	if @I_vDOCAMNT>700 then 
+	if @I_vDOCAMNT>700  
 	begin
 		set @cod_detraccion = '022'
 		set @nsa_Cod_Transac = '1001'
 	end
 
-	exec dbo.sp_nsaCOA_GL00014InsUpd	'9999999999001',	@I_vCUSTNMBR,	'Generico',	@cod_detraccion,	'',	'',	0,	@I_vSOPNUMBE,	@I_vSOPTYPE,	@I_vDOCDATE,	@nsa_Cod_Transac,	'00',	'1/1/1900',	'',	'1',	@I_vDOCDATE,	0,	'',	'',	0,	0,	0,	@I_vDOCAMNT
+	exec dbo.sp_nsaCOA_GL00014InsUpd
+	'9999999999001',
+	@I_vCUSTNMBR,
+	'Generico',
+	@cod_detraccion,
+	'',
+	'',
+	0,
+	@I_vSOPNUMBE,
+	@I_vSOPTYPE,
+	@I_vDOCDATE,
+	@nsa_Cod_Transac,
+	'00',
+	'1/1/1900',
+	'',
+	'1',
+	@I_vDOCDATE,
+	0,
+	'',
+	'',
+	0,
+	0,
+	0,
+	@I_vDOCAMNT
+
+END
+
+EXEC TII_GETTY_SOP_AA @I_vSOPTYPE, @I_vSOPNUMBE
 
 select @O_iErrorState = 0  
 return (@O_iErrorState)  

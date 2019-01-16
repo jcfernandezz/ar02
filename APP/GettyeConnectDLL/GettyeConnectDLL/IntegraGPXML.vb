@@ -1007,6 +1007,9 @@ ActualizaErrores:
         ActualizaCust = True
     End Function
 
+    '20/12/18 jcf Modifica longitud de punto de venta = 5 dígitos para Argentina
+    '16/01/19 jcf Agrega la creación automática de impuestos (CREATETAXES) para PER10. Requerido para FE ubl2.1
+    '
     Public Function ArmarDatosSOP(ByVal APPPath)
         Dim SQLSTR As String
         Dim sXML, sXML2 As String
@@ -1142,11 +1145,11 @@ ActualizaErrores:
                     'MSAL 08-03-2018 - Al finalizar sacar el tema de la letra M para 
                     If SOPLETRA = "M" Then
                         SOPID = Microsoft.VisualBasic.Left(SOPID, 3) & SOPLETRA & _
-                                    "0003"
+                                    "00003"
 
                     Else
                         SOPID = Microsoft.VisualBasic.Left(SOPID, 3) & SOPLETRA & _
-                                    "0001"
+                                    "00004"
 
                     End If
                 Else
@@ -1217,7 +1220,7 @@ ActualizaErrores:
                     End If
                     Subtotal = Subtotal + Redondear(CDbl(cnCustomer.Fields("price").Value))
                     Descuento = Redondear(CDbl(cnCustomer.Fields("discount").Value))
-                    If Trim(sINTERID) <> "GMOPE" And Trim(sINTERID) <> "GMSER" And Trim(sINTERID) <> "COL10" And Trim(sINTERID) <> "MEX10" Then
+                    If Trim(sINTERID) <> "GMOPE" And Trim(sINTERID) <> "GMSER" And Trim(sINTERID) <> "COL10" And Trim(sINTERID) <> "MEX10" And Trim(sINTERID) <> "PER10" Then
                         Impuesto = Redondear(CDbl(cnCustomer.Fields("vat").Value))
                     End If
                     TotalDocPAgo = Redondear((Subtotal - Descuento + Redondear(CDbl(cnCustomer.Fields("vat").Value)))) 'MSAL 16-01-2017
@@ -1253,7 +1256,7 @@ ActualizaErrores:
                 sXML2 = "		</taSopLineIvcInsert_Items>	" & vbNewLine
                 ' 13 If Trim(sINTERID) <> "GCOL" Then
                 'gGrabarLog("Cuarto 2", APPPath, CLeidos, CIntegrados, CRechazados)
-                If Trim(sINTERID) <> "GCOL" And Trim(sINTERID) <> "COL10" And Trim(sINTERID) <> "GMOPE" And Trim(sINTERID) <> "GMSER" And Trim(sINTERID) <> "MEX10" Then
+                If Trim(sINTERID) <> "GCOL" And Trim(sINTERID) <> "COL10" And Trim(sINTERID) <> "GMOPE" And Trim(sINTERID) <> "GMSER" And Trim(sINTERID) <> "MEX10" And Trim(sINTERID) <> "PER10" Then
                     ' 14 If CDbl(cnCustomer.Fields("vat").Value) <> 0 Then
                     If CDbl(cnCustomer.Fields("vat").Value) <> 0 Then
                         sXML2 = sXML2 + "		 <taSopLineIvcTaxInsert>" & vbNewLine
@@ -1342,7 +1345,7 @@ ActualizaErrores:
                 End If
                 'sXML2 = sXML2 + "			" & ArmarLineaXML(CStr(CDbl(cnCustomer.Fields("vat").Value)), "TAXAMNT", "")
                 ' 20 If Trim(sINTERID) <> "GCOL" Then
-                If Trim(sINTERID) <> "GCOL" And Trim(sINTERID) <> "COL10" And Trim(sINTERID) <> "GMOPE" And Trim(sINTERID) <> "GMSER" And Trim(sINTERID) <> "MEX10" Then
+                If Trim(sINTERID) <> "GCOL" And Trim(sINTERID) <> "COL10" And Trim(sINTERID) <> "GMOPE" And Trim(sINTERID) <> "GMSER" And Trim(sINTERID) <> "MEX10" And Trim(sINTERID) <> "PER10" Then
                     sXML2 = sXML2 + "			" & ArmarLineaXML(CStr(Redondear(Impuesto)), "TAXAMNT", "")
                     ' 20 Cierra
                 End If
@@ -1388,11 +1391,11 @@ ActualizaErrores:
                     ' 26 Cierra
                 End If
                 ' 27 If Trim(sINTERID) <> "GCOL" Then
-                If Trim(sINTERID) <> "GCOL" And Trim(sINTERID) <> "COL10" And Trim(sINTERID) <> "GMOPE" And Trim(sINTERID) <> "GMSER" And Trim(sINTERID) <> "MEX10" Then
+                If Trim(sINTERID) <> "GCOL" And Trim(sINTERID) <> "COL10" And Trim(sINTERID) <> "GMOPE" And Trim(sINTERID) <> "GMSER" And Trim(sINTERID) <> "MEX10" And Trim(sINTERID) <> "PER10" Then
                     sXML2 = sXML2 + "			" & ArmarLineaXML("1", "USINGHEADERLEVELTAXES", "")
                 Else
                     ' 28 If Trim(sINTERID) <> "GBRA" Then
-                    If Trim(sINTERID) <> "GBRA" And (Trim(sINTERID) = "GMOPE" Or Trim(sINTERID) = "GMSER" Or Trim(sINTERID) = "COL10" Or Trim(sINTERID) = "MEX10") Then
+                    If Trim(sINTERID) <> "GBRA" And (Trim(sINTERID) = "GMOPE" Or Trim(sINTERID) = "GMSER" Or Trim(sINTERID) = "COL10" Or Trim(sINTERID) = "MEX10" Or Trim(sINTERID) = "PER10") Then
                         sXML2 = sXML2 + "			" & ArmarLineaXML("1", "CREATETAXES", "")
                     Else
                         sXML2 = sXML2 + "			" & ArmarLineaXML("0", "CREATETAXES", "")
