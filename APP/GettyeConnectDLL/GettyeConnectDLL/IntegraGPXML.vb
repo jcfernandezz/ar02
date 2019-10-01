@@ -404,10 +404,14 @@ Err_Main:
                 sXML = sXML & "           " & ArmarLineaXML(sMainCity, "CITY", "1")
                 sXML = sXML & "           " & ArmarLineaXML(sMainState, "STATE", "1")
                 sXML = sXML & "           " & ArmarLineaXML(sMainZip, "ZIPCODE", "1")
-                sXML = sXML & "           " & ArmarLineaXML(sMainCountryCode, "COUNTRY", "1")
-                'If Not bExistsCustomer Then
+
+                If Trim(sINTERID) = "COL10" Then
+                    sXML = sXML & "           " & ArmarLineaXML(sMainCountryCode, "CCode", "1")
+                Else
+                    sXML = sXML & "           " & ArmarLineaXML(sMainCountryCode, "COUNTRY", "1")
+                End If
+
                 sXML = sXML & "           " & ArmarLineaXML(Trim(sMainPhone), "PHNUMBR1", "1")
-                'End If
                 sXML = sXML & "           " & ArmarLineaXML(sMainFax, "FAX", "1")
                 sXML = sXML & "           " & ArmarLineaXML("MAIN", "PRBTADCD", "")
                 sXML = sXML & "           " & ArmarLineaXML("MAIN", "PRSTADCD", "")
@@ -428,18 +432,6 @@ Err_Main:
                     sXML = sXML & "           <UpdateIfExists>1</UpdateIfExists>" & vbNewLine
                 End If
                 sXML = sXML & "		</taUpdateCreateCustomerRcd>" & vbNewLine
-                'sXML = sXML & "		<taCreateCustomerAddress>" & vbNewLine
-                'sXML = sXML & "           " & ArmarLineaXML(iCustomer, "CUSTNMBR")
-                'sXML = sXML & "           " & ArmarLineaXML("BILLING", "ADRSCODE")
-                'sXML = sXML & "           " & ArmarLineaXML(sBillingAddress1, "ADDRESS1")
-                'sXML = sXML & "           " & ArmarLineaXML(sBillingAddress2, "ADDRESS2")
-                'sXML = sXML & "           " & ArmarLineaXML(sBillingCity, "CITY")
-                'sXML = sXML & "           " & ArmarLineaXML(sBillingState, "STATE")
-                'sXML = sXML & "           " & ArmarLineaXML(sBillingZip, "ZIPCODE")
-                'sXML = sXML & "           " & ArmarLineaXML(sBillingCountryCode, "COUNTRY")
-                'sXML = sXML & "           " & ArmarLineaXML(sBillingPhone, "PHNUMBR1")
-                'sXML = sXML & "           " & ArmarLineaXML(sBillingFax, "FAX")
-                'sXML = sXML & "		</taCreateCustomerAddress>" & vbNewLine
                 'sXML = sXML & "		<taCreateCustomerAddress>" & vbNewLine
                 'sXML = sXML & "           " & ArmarLineaXML(iCustomer, "CUSTNMBR")
                 'sXML = sXML & "           " & ArmarLineaXML("SHIPPING", "ADRSCODE")
